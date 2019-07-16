@@ -1,22 +1,24 @@
 package com.montini.teamsports;
 
-import android.graphics.pdf.PdfDocument;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.MenuItem;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
 
 import java.sql.Date;
+import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
     // ActionBar toolbar;
     BottomNavigationView navMain;
     ViewPager viewPager;
+    static ListView eventsListView;
 
     static int numPlayers = 0;
     static int numFreeAgents = 0;
@@ -95,24 +97,40 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void MainStuff() {
-        PlayEvent pe1 = new PlayEvent(
+        // Construct the data source
+        ArrayList<PlayEvent> playEvents = new ArrayList<>();
+
+        // add one event
+        playEvents.add(new PlayEvent(
                 Date.valueOf("2019-07-13"),
                 new Location("SEB arena", "Ąžuolyno g. 7, Vilnius", 2),
-                DOUBLES);
+                DOUBLES));
 
-        pe1.addPlayer(new Player("Mantas"));
-        pe1.addPlayer(new Player("Rokas"));
-        pe1.addPlayer(new Player("Šaras"));
-        pe1.addPlayer(new Player("Rasa"));
+        // PlayEvent pe1 = new PlayEvent(
+        //         Date.valueOf("2019-07-13"),
+        //         new Location("SEB arena", "Ąžuolyno g. 7, Vilnius", 2),
+        //         DOUBLES);
 
-        pe1.addPlayer(new Player("Sekmas"));
-        pe1.addPlayer(new Player("Tadas"));
-        pe1.addPlayer(new Player("Rolis"));
-        pe1.addPlayer(new Player("Giedrė"));
-        pe1.addPlayer(new Player("Aleksandra"));
+        playEvents.get(0).addPlayer(new Player("Mantas"));
+        playEvents.get(0).addPlayer(new Player("Rokas"));
+        playEvents.get(0).addPlayer(new Player("Šaras"));
+        playEvents.get(0).addPlayer(new Player("Rasa"));
+
+        playEvents.get(0).addPlayer(new Player("Sekmas"));
+        playEvents.get(0).addPlayer(new Player("Tadas"));
+        playEvents.get(0).addPlayer(new Player("Rolis"));
+        playEvents.get(0).addPlayer(new Player("Giedrė"));
+        playEvents.get(0).addPlayer(new Player("Aleksandra"));
 
         System.out.println(numFreeAgents);
 
+        // Create the adapter to convert the array to views
+        EventsAdapter adapter = new EventsAdapter(this, playEvents);
+        // Attach the adapter to a ListView
+        eventsListView = findViewById(R.id.eventsList);
+        eventsListView.setAdapter(adapter);
+
     }
+
 
 }
