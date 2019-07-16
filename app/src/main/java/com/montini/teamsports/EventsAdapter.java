@@ -8,32 +8,41 @@ import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class EventsAdapter extends ArrayAdapter<PlayEvent> {
 
+    private List<PlayEvent> data = new ArrayList<>();
+    private Context mContext;
+
     public EventsAdapter(Context context, ArrayList<PlayEvent> events) {
         super(context, 0, events);
+        mContext = context;
+        data = events;
     }
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        // Get the data item for this position
-        PlayEvent pe = getItem(position);
+        View listItem = convertView;
 
         // Check if an existing view is being reused, otherwise inflate the view
-        if (convertView == null) {
-            convertView = LayoutInflater.from(getContext()).inflate(R.layout.events_list_row, parent, false);
+        if (listItem == null) {
+            listItem = LayoutInflater.from(mContext).inflate(R.layout.events_list_row, parent, false);
         }
 
+        // Get the data item for this position
+        // PlayEvent pe = getItem(position);
+        PlayEvent pe = data.get(position);
+
         // Lookup view for data population
-        TextView tvDate = (TextView) convertView.findViewById(R.id.eventDate);
-        TextView tvLocation = (TextView) convertView.findViewById(R.id.eventLocation);
+        TextView tvDate = convertView.findViewById(R.id.eventDate);
+        TextView tvLocation = convertView.findViewById(R.id.eventLocation);
 
         // Populate the data into the template view using the data object
         tvDate.setText(pe.date.toString());
         tvLocation.setText(pe.location.name);
 
         // Return the completed view to render on screen
-        return convertView;
+        return listItem;
     }
 }

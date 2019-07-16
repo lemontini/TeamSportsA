@@ -18,7 +18,8 @@ public class MainActivity extends AppCompatActivity {
     // ActionBar toolbar;
     BottomNavigationView navMain;
     ViewPager viewPager;
-    static ListView eventsListView;
+    private ListView eventsListView;
+    static ArrayList<PlayEvent> playEvents;
 
     static int numPlayers = 0;
     static int numFreeAgents = 0;
@@ -124,13 +125,13 @@ public class MainActivity extends AppCompatActivity {
 
         System.out.println(numFreeAgents);
 
-        // Create the adapter to convert the array to views
-        EventsAdapter adapter = new EventsAdapter(this, playEvents);
-        // Attach the adapter to a ListView
-        eventsListView = findViewById(R.id.eventsList);
-        eventsListView.setAdapter(adapter);
+        // TODO: total fail in inflating the ListView. Probably should be relocated elsewhere
+        // // Create the adapter to convert the array to views
+        // EventsAdapter adapter = new EventsAdapter(this, playEvents);
+        // // Attach the adapter to a ListView
+        // eventsListView = (ListView) findViewById(R.id.eventsList);
+        // eventsListView.setAdapter(adapter);
 
     }
-
 
 }
