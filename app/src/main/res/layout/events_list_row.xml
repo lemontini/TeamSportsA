@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="vertical"
+    android:orientation="horizontal"
     >
 
     <TextView
@@ -12,7 +12,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="start|center_vertical"
         android:layout_margin="5dp"
-        android:layout_weight="1"
+        android:layout_weight="2"
         android:height="50sp"
         android:divider="#FFA000"
         android:dividerHeight="1px"
@@ -26,10 +26,9 @@
         android:id="@+id/eventLocation"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/eventDate"
         android:layout_gravity="right|center_vertical"
         android:layout_margin="5dp"
-        android:layout_weight="3"
+        android:layout_weight="5"
         android:height="50sp"
         android:gravity="center_horizontal|center_vertical"
         android:text="Location"
@@ -45,4 +44,4 @@
         <!--android:tint="#FFA000"-->
         <!--app:srcCompat="@android:drawable/ic_input_add" />-->
 
-</RelativeLayout>
+</LinearLayout>

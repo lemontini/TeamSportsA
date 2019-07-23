@@ -4,21 +4,23 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#2D2F32"
-    tools:context=".MainActivity">
+    tools:context="com.montini.teamsports.EventsFragment">
 
-    <ListView
+    <android.support.v7.widget.RecyclerView
         android:id="@+id/eventsList"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:divider="#FFA000"
         android:dividerHeight="1px"
-        android:listSelector="#1DFFA000"
-        />
-    <!--<TextView-->
-        <!--android:layout_width="wrap_content"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:text="Events"-->
-        <!--android:layout_gravity="center"-->
-        <!--/>-->
+        android:listSelector="#1DFFA000">
+    </android.support.v7.widget.RecyclerView>
+
+    <!--<ListView-->
+        <!--android:id="@+id/eventsList"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent"-->
+        <!--android:divider="#FFA000"-->
+        <!--android:dividerHeight="1px"-->
+        <!--android:listSelector="#1DFFA000" />-->
 
 </FrameLayout>
