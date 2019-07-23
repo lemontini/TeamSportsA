@@ -3,24 +3,48 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="#2D2F32"
     tools:context="com.montini.teamsports.EventsFragment">
 
-    <android.support.v7.widget.RecyclerView
+    <com.montini.teamsports.MyRecyclerView
         android:id="@+id/eventsList"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:divider="#FFA000"
         android:dividerHeight="1px"
         android:listSelector="#1DFFA000">
-    </android.support.v7.widget.RecyclerView>
+    </com.montini.teamsports.MyRecyclerView>
 
-    <!--<ListView-->
-        <!--android:id="@+id/eventsList"-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="match_parent"-->
-        <!--android:divider="#FFA000"-->
-        <!--android:dividerHeight="1px"-->
-        <!--android:listSelector="#1DFFA000" />-->
+    <!-- Added an empty view which will be shown when the EmptyRecyclerView
+         is empty -->
+    <LinearLayout
+        android:id="@+id/events_list_empty_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
 
+        <TextView
+            android:text="@string/no_events"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:layout_weight="6"
+            android:height="50sp"
+            android:gravity="left|center_vertical"
+            android:textColor="#FF9800"
+            android:textSize="20sp" />
+
+        <ImageButton
+            android:id="@+id/imageButtonAdd"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_gravity="center_vertical"
+            android:scaleType="fitCenter"
+            android:tint="#FFA000"
+            android:background="@drawable/service_button"
+            android:layout_marginRight="5dp"
+            app:srcCompat="@drawable/plus_128" />
+
+    </LinearLayout>
 </FrameLayout>

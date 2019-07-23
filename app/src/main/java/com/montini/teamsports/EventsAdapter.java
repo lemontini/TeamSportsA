@@ -21,7 +21,7 @@ public class EventsAdapter extends RecyclerView.Adapter<EventsAdapter.ViewHolder
     public EventsAdapter(List<PlayEvent> data, Context mContext) {
         this.data = data;
         this.mContext = mContext;
-        System.out.println(data.get(0).location.name);
+        // System.out.println(data.get(0).location.name);
     }
 
     // public EventsAdapter(Context context, ArrayList<PlayEvent> events) {

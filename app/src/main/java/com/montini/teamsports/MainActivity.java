@@ -18,8 +18,7 @@ public class MainActivity extends AppCompatActivity {
     // ActionBar toolbar;
     BottomNavigationView navMain;
     ViewPager viewPager;
-    private ListView eventsListView;
-    static ArrayList<PlayEvent> playEvents;
+    private ListView eventsListView, locationsListView, playersListView;
 
     static int numPlayers = 0;
     static int numFreeAgents = 0;

@@ -12,7 +12,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="start|center_vertical"
         android:layout_margin="5dp"
-        android:layout_weight="2"
+        android:layout_weight="3"
         android:height="50sp"
         android:divider="#FFA000"
         android:dividerHeight="1px"
@@ -26,22 +26,24 @@
         android:id="@+id/eventLocation"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_gravity="right|center_vertical"
+        android:layout_gravity="left|center_vertical"
         android:layout_margin="5dp"
-        android:layout_weight="5"
+        android:layout_weight="4"
         android:height="50sp"
-        android:gravity="center_horizontal|center_vertical"
+        android:gravity="left|center_vertical"
         android:text="Location"
         android:textColor="#FF9800"
         android:textSize="20sp" />
 
-    <!--<ImageButton-->
-        <!--android:id="@+id/imageButtonAdd"-->
-        <!--android:layout_width="35dp"-->
-        <!--android:layout_height="35dp"-->
-        <!--android:layout_gravity="center_vertical"-->
-        <!--android:scaleType="fitCenter"-->
-        <!--android:tint="#FFA000"-->
-        <!--app:srcCompat="@android:drawable/ic_input_add" />-->
+    <ImageButton
+        android:id="@+id/imageButtonEdit"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:layout_gravity="center_vertical"
+        android:background="@drawable/service_button"
+        android:scaleType="fitCenter"
+        android:tint="#FFA000"
+        android:padding="8dp"
+        app:srcCompat="@drawable/edit_button" />
 
 </LinearLayout>
