@@ -22,7 +22,25 @@ public class EventsFragment extends Fragment {
     // EventsAdapter adapter;
 
     public EventsFragment() {
-        if (playEvents == null) playEvents = new ArrayList<PlayEvent>();
+        playEvents = new ArrayList<>();
+        playEvents.add(new PlayEvent(
+                Date.valueOf("2019-07-13"),
+                new Location("SEB arena", "Ąžuolyno g. 7, Vilnius", 4),
+                MainActivity.DOUBLES));
+        playEvents.add(new PlayEvent(
+                Date.valueOf("2019-07-27"),
+                new Location("Delfi arena", "Ozo g. 14c, Vilnius", 8),
+                MainActivity.DOUBLES));
+        playEvents.get(0).addPlayer(new Player("Mantas"));
+        playEvents.get(0).addPlayer(new Player("Rokas"));
+        playEvents.get(0).addPlayer(new Player("Šaras"));
+        playEvents.get(0).addPlayer(new Player("Rasa"));
+
+        playEvents.get(0).addPlayer(new Player("Sekmas"));
+        playEvents.get(0).addPlayer(new Player("Tadas"));
+        playEvents.get(0).addPlayer(new Player("Rolis"));
+        playEvents.get(0).addPlayer(new Player("Giedrė"));
+        playEvents.get(0).addPlayer(new Player("Aleksandra"));
     }
 
     @Nullable
@@ -36,16 +54,6 @@ public class EventsFragment extends Fragment {
 
         View emptyView = v.findViewById(R.id.events_list_empty_view);
         eventsListView.setEmptyView(emptyView);
-
-        ArrayList<PlayEvent> pe = new ArrayList<>();
-        playEvents.add(new PlayEvent(
-                Date.valueOf("2019-07-13"),
-                new Location("SEB arena", "Ąžuolyno g. 7, Vilnius", 4),
-                MainActivity.DOUBLES));
-        playEvents.add(new PlayEvent(
-                Date.valueOf("2019-07-27"),
-                new Location("Delfi arena", "Ozo g. 14c, Vilnius", 8),
-                MainActivity.DOUBLES));
 
         adapter = new EventsAdapter(playEvents, v.getContext());
         // Log.e("WTF", v.getContext().toString());

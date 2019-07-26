@@ -31,4 +31,13 @@ public class PlayEvent {
 
     }
 
+    public Location getLocation() {
+        Location dummy = new Location(
+                "SEB arena",
+                "Ąžuolyno g. 7, Vilnius",
+                4); // TODO: create function to return location from the locations list. If the locations list is empty, transfer to the dialog to create a new location in the list
+
+        return dummy;
+    }
+
 }
